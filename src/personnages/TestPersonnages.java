@@ -2,7 +2,7 @@ package personnages;
 
 public class TestPersonnages {
 	public static void main(String[] args) {
-		Gaulois asterix = new Gaulois(8,"Asterix");
+		Gaulois asterix = new Gaulois("Asterix",8);
 		System.out.println(asterix.getNom());
 	}
 }
