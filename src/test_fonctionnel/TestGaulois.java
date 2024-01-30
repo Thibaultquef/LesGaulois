@@ -4,10 +4,10 @@ import personnages.Romain;
 
 public class TestGaulois {
 	public static void main(String[] args) {
-		Gaulois asterix = new Gaulois(8,"Asterix");
-		Romain minus = new Romain(6,"minus");
+		Gaulois asterix = new Gaulois("Asterix",8);
+		Romain minus = new Romain("minus",6);
 		System.out.println(asterix.getNom());
-		asterix.parler(":<< Bonjour � tous >>");
+		asterix.parler(":<< Bonjour à tous >>");
 		minus.parler(":<< UN GAU... UN GAUGAU... >>");
 		minus.recevoirCoup(3);
 		minus.recevoirCoup(3);
