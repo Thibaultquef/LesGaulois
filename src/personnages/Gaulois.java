@@ -9,3 +9,4 @@ public class Gaulois extends Personnage {
 		return "Gaulois";
 	}
 }
+
