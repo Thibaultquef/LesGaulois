@@ -1,24 +1,17 @@
 package personnages;
 
-public enum Armure {
-	CASQUE("casque",2),
-	PLASTRON("plastron",3),
-	BOUCLIER("bouclier",3);
-	
-	private String chaine;
-	private int force;
-	
-	private Armure(String string, int force) {
-		this.chaine = string;
-		this.force = force;
-	}
-	
-	public int getForce() {
-		return force;
-	}
-	
-	public String getNom() {
-		return chaine;
-	}
-	
+public class Armure {
+    private TypeArmure type;
+
+    public Armure(TypeArmure type) {
+        this.type = type;
+    }
+
+    public String getNom() {
+        return type.getNom();
+    }
+
+    public int getReductionForce() {
+        return type.getReductionForce();
+    }
 }

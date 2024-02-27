@@ -4,7 +4,6 @@ import personnages.Armure;
 import personnages.Druide;
 import personnages.Gaulois;
 import personnages.Grade;
-import personnages.Romain;
 import personnages.Soldat;
 
 public class TestGaulois {
