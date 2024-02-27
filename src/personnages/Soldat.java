@@ -37,29 +37,23 @@ public class Soldat extends Romain {
 	public void equiperArmure() {
 		if (casque == null) {
 			casque = new Casque();
-			System.out.println("Le soldat "+nom+"à déja un casque");
+			System.out.println("Le soldat "+nom+"à déja un casque.");
 			}
 		else
 			parler("J'ai déja un casque");
 		
 		if (plastron == null) {
 			plastron = new Plastron();
-			System.out.println("Le soldat "+nom+"à déja un plastron");
+			System.out.println("Le soldat "+nom+"à déja un plastron.");
 		}
 		else
 			parler("J'ai déja un plastron");
 		if (bouclier == null) {
 			bouclier = new Bouclier();
-			System.out.println("Le soldat "+nom+"à déja un bouclier");
+			System.out.println("Le soldat "+nom+"à déja un bouclier.");
 		}
 		else 
 			parler("J'ai déja un bouclier");
 		
 	}
-	
-
-	
-
-
-
 }
