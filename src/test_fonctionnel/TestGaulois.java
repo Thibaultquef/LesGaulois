@@ -1,6 +1,4 @@
 package test_fonctionnel;
-
-import personnages.Armure;
 import personnages.Druide;
 import personnages.Gaulois;
 import personnages.Grade;
@@ -18,12 +16,8 @@ public class TestGaulois {
 		Gaulois assurancetourix = new Gaulois("Assurancetourix",4);
 		Gaulois abraracourcix = new Gaulois("Abraracourcix",4);
 		Gaulois agecanonix = new Gaulois("Agecanonix",4);
-		
-		minus.equiperArmure(Armure.BOUCLIER);
-		minus.equiperArmure(Armure.CASQUE);
-		minus.equiperArmure(Armure.PLASTRON);
-		
 		Druide panoramix = new Druide("Panoramix",1);
+		
 		panoramix.fabriquerPotion(3);
 		
 		

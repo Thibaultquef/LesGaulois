@@ -1,8 +1,18 @@
 package personnages;
+import armure.Casque;
+import armure.Bouclier;
+import armure.Plastron;
 
 public class Soldat extends Romain {
 	public Grade grade;
-	public Armure[] armure = new Armure[3];
+	Casque casque = null;
+	Bouclier bouclier = null;
+	Plastron  plastron = null;
+	
+	public Soldat(String nom,  Grade grade, int force) {
+		super(nom, force);
+		this.grade = grade;
+	}
 	
 	@Override
 	protected String donnerAuteur() {
@@ -11,21 +21,10 @@ public class Soldat extends Romain {
 	
 	@Override
 	public void recevoirCoup(int forceCoup) {
-	    int forceAbsorbee = 0;
-	    
-	    for (int i = 0; i< armure.length;i++) {
-	        if (armure[i] != null) {
-	            forceAbsorbee = forceAbsorbee + armure[i].getForce();
-	            forceCoup = forceCoup - forceAbsorbee;
-	            if (forceCoup > 0) {
-	            	System.out.println("Le " + armure[i].getNom() + " absorbe " + armure[i].getForce() + " du coup");
-	            	armure[i] = null;
-	            }
-	        }
-	    }
-	    
-	    if (forceCoup > 0) {
-	        force = force - forceCoup;
+	    int protection = (casque.getProtection() + bouclier.getProtection() + plastron.getProtection());
+	    int newForceCoup = forceCoup - protection;
+	    if (newForceCoup > 0) {
+	        force = force - newForceCoup;
 	        if (force > 0) {
 	            parler("Aïe");
 	        } else {
@@ -35,26 +34,32 @@ public class Soldat extends Romain {
 	    } 
 	}
 	
-	public Soldat(String nom,  Grade grade, int force) {
-		super(nom, force);
-		this.grade = grade;
+	public void equiperArmure() {
+		if (casque == null) {
+			casque = new Casque();
+			System.out.println("Le soldat "+nom+"à déja un casque");
+			}
+		else
+			parler("J'ai déja un casque");
+		
+		if (plastron == null) {
+			plastron = new Plastron();
+			System.out.println("Le soldat "+nom+"à déja un plastron");
+		}
+		else
+			parler("J'ai déja un plastron");
+		if (bouclier == null) {
+			bouclier = new Bouclier();
+			System.out.println("Le soldat "+nom+"à déja un bouclier");
+		}
+		else 
+			parler("J'ai déja un bouclier");
+		
 	}
 	
-	public void equiperArmure(Armure equipement) {
-		for (int i = 0; i < armure.length; i++) {
-	        if (armure[i] == equipement) {
-	        	this.parler("J'ai déjà un " + equipement.getNom());
-	            return;
-	        }
-	    }
 
-	    for (int i = 0; i < armure.length; i++) {
-	        if (armure[i] == null) {
-	            armure[i] = equipement;   
-	            System.out.println("Le " + donnerAuteur() + " " + nom + " s'équipe avec un " + equipement.getNom() + ".");
-	            return;
-	        }
-	    }
-	}
+	
+
+
 
 }

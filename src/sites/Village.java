@@ -1,8 +1,6 @@
 package sites;
 
-import personnages.Grade;
 import personnages.Gaulois;
-import personnages.Soldat;
 
 public class Village {
 	Gaulois chef;
