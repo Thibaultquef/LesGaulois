@@ -1,7 +1,5 @@
 package personnages;
-import armure.Casque;
-import armure.Bouclier;
-import armure.Plastron;
+import personnages.Armures;
 
 public class Soldat extends Romain {
 	public Grade grade;
