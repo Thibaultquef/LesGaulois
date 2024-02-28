@@ -32,7 +32,6 @@ public class TestSites {
 		camp.ajouterSoldat(milexcus);
 		camp.ajouterSoldat(tullius);
 		camp.ajouterSoldat(ballondebaudrus);
-		
 		village.ajouterVillageois(agecanonix);
 		village.ajouterVillageois(assurancetourix);
 		village.ajouterVillageois(asterix);

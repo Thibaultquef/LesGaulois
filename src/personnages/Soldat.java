@@ -21,8 +21,11 @@ public class Soldat extends Romain {
 	
 	@Override
 	public void recevoirCoup(int forceCoup) {
-	    int protection = (casque.getProtection() + bouclier.getProtection() + plastron.getProtection());
-	    int newForceCoup = forceCoup - protection;
+		int newForceCoup = forceCoup;
+	    if (casque != null && bouclier != null && plastron != null) {
+	    	int protection = (casque.getProtection() + bouclier.getProtection() + plastron.getProtection());
+	    	newForceCoup = forceCoup - protection;}
+	    
 	    if (newForceCoup > 0) {
 	        force = force - newForceCoup;
 	        if (force > 0) {
