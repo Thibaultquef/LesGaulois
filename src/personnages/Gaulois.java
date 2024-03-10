@@ -15,13 +15,10 @@ public class Gaulois extends Personnage {
 	}
 
 	@Override
-	public int calculForceFrappe() {
-		int forceFrappe = super.calculForceFrappe();
-		if (puissancePotion > 1) {
-			forceFrappe = forceOrigine * (int) puissancePotion;
-			puissancePotion = puissancePotion - 0.5;
-		}
-		return forceFrappe;
+	public double calculForceFrappe(double forceCoup) {
+		double newForceCoup = this.force * this.puissancePotion;
+		this.puissancePotion = Math.max(1.0, this.puissancePotion - 0.5); 
+		return newForceCoup;
 	}
 
 	public void recevoirPotion(double potion) {

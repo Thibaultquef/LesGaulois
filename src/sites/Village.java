@@ -3,8 +3,9 @@ package sites;
 import personnages.Gaulois;
 
 public class Village {
-	Gaulois chef;
-	Gaulois[] villageois = new Gaulois[4];
+	private Gaulois chef;
+	private Gaulois[] villageois = new Gaulois[4];
+	private int nbVillageois = 0;
 	
 	public Village(Gaulois chef) {
 		this.chef = chef;
@@ -20,6 +21,7 @@ public class Village {
 			if (villageois[i] == null) {
 				chef.parler("Bienvenue " + gaulois.getNom() + " !");
 				villageois[i] = gaulois;
+				nbVillageois +=1;
 				return true;
 			}
 		}
@@ -43,7 +45,12 @@ public class Village {
 			chef.parler("Merci !");
 	}
 	
+	public int getNbVillageois() {
+		return nbVillageois;
+	}
 	
-	
+	public Gaulois[] getVillageois() {
+		return villageois;
+	}
 
 }

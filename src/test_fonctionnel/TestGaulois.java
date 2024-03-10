@@ -7,8 +7,9 @@ import personnages.Soldat;
 public class TestGaulois {
 	public static void main(String[] args) {
 		
-		Gaulois asterix = new Gaulois("Astérix",5);
-		Soldat minus = new Soldat ("Minus",Grade.SOLDAT,6);
+		Soldat minus = new Soldat ("Minus",Grade.SOLDAT,4);
+		Gaulois asterix = new Gaulois("Astérix",3);
+
 		
 		//System.out.println(asterix.getNom());
 		
@@ -32,10 +33,11 @@ public class TestGaulois {
 		asterix.parler("Bonjour à tous");
 		minus.parler("Un Gau .. Gaugole");
 		
-		
-		for (int i = 0; i<4; i++) {
+	
+		while(!asterix.estMort() && !minus.estMort()) {
 			asterix.frapper(minus);
 			minus.frapper(asterix);
+			}
 		}
-	}
+	
 }

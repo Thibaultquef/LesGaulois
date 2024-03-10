@@ -18,21 +18,16 @@ public class Soldat extends Romain {
 	}
 	
 	@Override
-	public void recevoirCoup(int forceCoup) {
-		int newForceCoup = forceCoup;
+	public double armure(double forceCoup) {
+		double newForceCoup = forceCoup;
 	    if (casque != null && bouclier != null && plastron != null) {
-	    	int protection = (casque.getProtection() + bouclier.getProtection() + plastron.getProtection());
-	    	newForceCoup = forceCoup - protection;}
+	    	int armure = (casque.getProtection() + bouclier.getProtection() + plastron.getProtection());
+	    	System.out.println("Le casque attenue les dégats de " + casque.getProtection());
+	    	System.out.println("Le bouclier attenue les dégats de " + bouclier.getProtection());
+	    	System.out.println("Le plastron attenue les dégats de " + plastron.getProtection());
+	    	newForceCoup = forceCoup - armure;}
 	    
-	    if (newForceCoup > 0) {
-	        force = force - newForceCoup;
-	        if (force > 0) {
-	            parler("Aïe");
-	        } else {
-	            force = 0;
-	            parler("J'abandonne");
-	        }
-	    } 
+	    return newForceCoup;
 	}
 	
 	public void equiperArmure() {

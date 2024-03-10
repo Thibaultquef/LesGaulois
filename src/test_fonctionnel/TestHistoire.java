@@ -1,7 +1,6 @@
 package test_fonctionnel;
 import java.util.Random;
 
-import personnages.Druide;
 import personnages.Gaulois;
 import personnages.Grade;
 import personnages.Soldat;
@@ -9,7 +8,7 @@ import sites.Camp;
 import sites.Village;
 
 public class TestHistoire {
-    public void main(String[] args) {
+    public static void main(String[] args) {
 
         Random random = new Random();
 

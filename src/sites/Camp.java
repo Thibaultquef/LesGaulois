@@ -4,9 +4,9 @@ import personnages.Grade;
 import personnages.Soldat;
 
 public class Camp {
-	Soldat commandant;
-	Soldat[] soldats = new Soldat[3];
-	
+	private Soldat commandant;
+	private Soldat[] soldats = new Soldat[3];
+	private int nbSoldats = 0;
 	
 	public Camp(Soldat commandant) {
 		this.commandant = commandant;
@@ -22,6 +22,7 @@ public class Camp {
 			if (soldats[i] == null) {
 				soldat.parler(" Je mets mon épée au service de Rome dans le camp dirigé par " + commandant.getNom());
 				soldats[i] = soldat;
+				nbSoldats +=1;
 				return true;
 			}
 		}
@@ -47,6 +48,14 @@ public class Camp {
 		else {
 			soldat.parler("Je ne suis pas suffisamment gradé pour prendre la direction du camp romain.");
 		}
+	}
+	
+	public int getNbSoldats() {
+		return nbSoldats;
+	}
+	
+	public Soldat[] getArmee() {
+		return soldats;
 	}
 	
 }
