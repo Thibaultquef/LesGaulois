@@ -3,9 +3,9 @@ import personnages.Armures;
 
 public class Soldat extends Romain {
 	public Grade grade;
-	Casque casque = null;
-	Bouclier bouclier = null;
-	Plastron  plastron = null;
+	private Armures casque = null;
+	private Armures bouclier = null;
+	private Armures  plastron = null;
 	
 	public Soldat(String nom,  Grade grade, int force) {
 		super(nom, force);
@@ -37,20 +37,20 @@ public class Soldat extends Romain {
 	
 	public void equiperArmure() {
 		if (casque == null) {
-			casque = new Casque();
+			casque = Armures.CASQUE;
 			System.out.println("Le soldat "+nom+"à déja un casque.");
 			}
 		else
 			parler("J'ai déja un casque");
 		
 		if (plastron == null) {
-			plastron = new Plastron();
+			plastron = Armures.PLASTRON;
 			System.out.println("Le soldat "+nom+"à déja un plastron.");
 		}
 		else
 			parler("J'ai déja un plastron");
 		if (bouclier == null) {
-			bouclier = new Bouclier();
+			bouclier = Armures.BOUCLIER;
 			System.out.println("Le soldat "+nom+"à déja un bouclier.");
 		}
 		else 

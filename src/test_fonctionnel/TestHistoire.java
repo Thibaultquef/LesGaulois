@@ -1,15 +1,15 @@
-package batailles;
-import personnages.Gaulois;
-import personnages.Soldat;
-import personnages.Grade;
-import sites.Camp;
-import sites.Village;
+package test_fonctionnel;
 import java.util.Random;
 
-public class Batailles {
+import personnages.Druide;
+import personnages.Gaulois;
+import personnages.Grade;
+import personnages.Soldat;
+import sites.Camp;
+import sites.Village;
+
+public class TestHistoire {
     public void main(String[] args) {
-        Village village = new Village("Village des Gaulois");
-        Camp camp = new Camp("Camp Romain");
 
         Random random = new Random();
 
@@ -28,18 +28,22 @@ public class Batailles {
         Soldat guerrier = new Soldat("Guerrier", Grade.SOLDAT, random.nextInt(15) + 1);
 
 
-        camp.ajouterSoldat(poissonier);
-        camp.ajouterSoldat(libraire);
-        camp.ajouterSoldat(patissiere);
-        camp.ajouterSoldat(musicien);
-        camp.ajouterSoldat(clown);
+        
+        Village village = new Village(clown);
+        Camp camp = new Camp(thibault);
+        
+
+        village.ajouterVillageois(poissonier);
+        village.ajouterVillageois(libraire);
+        village.ajouterVillageois(patissiere);
+        village.ajouterVillageois(musicien);
+        village.ajouterVillageois(clown);
 
 
-        village.ajouterVillageois(professeur);
-        village.ajouterVillageois(thibault);
-        village.ajouterVillageois(vagabon);
-        village.ajouterVillageois(mage);
-        village.ajouterVillageois(guerrier);
+        camp.ajouterSoldat(professeur);
+        camp.ajouterSoldat(thibault);
+        camp.ajouterSoldat(vagabon);
+        camp.ajouterSoldat(mage);
+        camp.ajouterSoldat(guerrier);
     }
-    
 }

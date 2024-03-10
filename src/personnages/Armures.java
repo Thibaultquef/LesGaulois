@@ -1,7 +1,7 @@
 package personnages;
 
 public enum Armures {
-	Bouclier("Bouclier", 3), Casque("Casque", 2), Plastron("Plastron", 3);
+	BOUCLIER("Bouclier", 3), CASQUE("Casque", 2), PLASTRON("Plastron", 3);
 	
 	
 	private final String nom;
